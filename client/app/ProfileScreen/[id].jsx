@@ -1,25 +1,21 @@
 import React from "react";
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
 import { AntDesign, Feather } from "@expo/vector-icons";
+import { useLocalSearchParams, useRouter } from "expo-router";
 
-const EditProfile = ({ navigation }) => {
+const EditProfile = () => {
+    const router = useRouter();
+    const { id } = useLocalSearchParams();
+
     return (
         <View style={styles.container}>
-            {/* Header */}
-            <View style={styles.header}>
-                <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
-                    <AntDesign name="arrowleft" size={24} color="black" />
-                </TouchableOpacity>
-                <Text style={styles.headerTitle}>My Info</Text>
-            </View>
-
             {/* Profile Image Section */}
             <View style={styles.profileSection}>
                 <View style={styles.avatar}>
                     <Feather name="user" size={40} color="#aaa" />
                 </View>
                 <TouchableOpacity style={styles.uploadButton}>
-                    <Text style={styles.uploadText}>Upload Image</Text>
+                    <Text style={styles.uploadText}>Upload Image {id}</Text>
                 </TouchableOpacity>
             </View>
 

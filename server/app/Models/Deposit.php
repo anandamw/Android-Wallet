@@ -10,7 +10,7 @@ class Deposit extends Model
 {
     use HasFactory;
     protected $table = 'deposits';
-    protected $fillable = ['mount', 'datetime', 'description', 'users_id'];
+    protected $fillable = ['mount', 'datetime', 'users_id'];
 
     public function user()
     {

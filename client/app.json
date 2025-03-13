@@ -1,7 +1,9 @@
 {
   "expo": {
-    "name": "client",
-    "slug": "client",
+    "name": "pwa_react_wallet",
+    "slug": "pwa_react_wallet",
+    "scheme": "pwa_react_wallet",
+    "plugins": ["expo-router"],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

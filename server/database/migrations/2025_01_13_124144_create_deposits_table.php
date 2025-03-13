@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('deposits', function (Blueprint $table) {
             $table->id();
             $table->foreignId('users_id')->constrained()->onDelete('cascade');
-
+            
             $table->string('mount');
             $table->string('datetime');
             $table->timestamps();

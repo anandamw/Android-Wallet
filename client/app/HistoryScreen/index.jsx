@@ -1,7 +1,7 @@
 import { Image, StyleSheet, Text, View, ScrollView, SafeAreaView } from 'react-native'
 import React from 'react'
-
 import { ImageS } from "../../assets";
+
 const HistoryScreen = () => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>

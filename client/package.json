@@ -1,7 +1,7 @@
 {
-  "name": "client",
+  "name": "pwa_react_wallet",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "expo-router/entry",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
@@ -9,17 +9,14 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@react-navigation/bottom-tabs": "^7.2.1",
-    "@react-navigation/elements": "^2.2.6",
-    "@react-navigation/native-stack": "^7.2.1",
-    "@react-navigation/stack": "^7.1.2",
     "expo": "~52.0.37",
     "expo-status-bar": "~2.0.1",
     "react": "18.3.1",
     "react-native": "0.76.7",
-    "react-native-gesture-handler": "~2.20.2",
-    "@react-native-masked-view/masked-view": "0.3.2",
-    "@react-native-community/datetimepicker": "8.2.0"
+    "expo-router": "~4.0.17",
+    "expo-image": "~2.0.6",
+    "@react-native-community/datetimepicker": "8.2.0",
+    "react-native-web": "~0.19.13"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

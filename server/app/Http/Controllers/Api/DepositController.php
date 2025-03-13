@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\Deposit;
 use Illuminate\Http\Request;
+
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 
 class DepositController extends Controller
 {
@@ -57,5 +59,30 @@ class DepositController extends Controller
             "status" => 200,
             "data" => $deposits
         ]);
+    }
+
+
+    public function store(Request $request)
+    {
+        // Validasi data yang dikirim dari frontend
+        $validator = Validator::make($request->all(), [
+            'amount' => 'required',
+            'date' => 'required',
+            'user_id' => 'required'
+        ]);
+
+        // if ($validator->fails()) {
+        //     return response()->json(['errors' => $validator->errors()], 422);
+        // }
+
+
+        // Simpan data deposit ke database
+        $deposit = Deposit::create([
+            'users_id' => $request->user_id,
+            'mount' => $request->amount,
+            'datetime' => $request->date,
+        ]);
+
+        return response()->json(['message' => 'Deposit created successfully', 'data' => $deposit], 201);
     }
 }

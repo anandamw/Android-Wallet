@@ -13,8 +13,8 @@ import React, { useEffect, useState } from "react";
 
 
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
-
 import { ImageS } from "../../assets";
+
 import { Network } from "../../network";
 
 const HomeScreen = ({ navigation }) => {

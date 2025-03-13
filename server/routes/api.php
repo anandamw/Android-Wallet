@@ -24,6 +24,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/data/deposit', [DepositController::class, 'index']);
 Route::get('/data/history', [DepositController::class, 'history']);
+Route::post('/deposit/store', [DepositController::class, 'store']);
 
 
 Route::post('/data/deposit/insert', [DepositController::class, 'insert']);
