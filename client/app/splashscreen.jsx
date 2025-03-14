@@ -25,7 +25,7 @@ const splashscreen = () => {
 
       }}>
 
-        <Link href={'/home'}>
+        <Link href={'auth/login'}>
           <Text style={{ color: "white" }}>Get Started</Text>
         </Link>
       </TouchableOpacity>

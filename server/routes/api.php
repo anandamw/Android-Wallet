@@ -1,9 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
-
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\Api\DepositController;
 
@@ -22,14 +21,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/data/deposit', [DepositController::class, 'index']);
-Route::get('/data/history', [DepositController::class, 'history']);
-Route::post('/deposit/store', [DepositController::class, 'store']);
+Route::post('/login', [AuthController::class, 'login']);
 
-
-Route::post('/data/deposit/insert', [DepositController::class, 'insert']);
-
-Route::get('/data/pages', [HomePageController::class, 'index']);
-Route::get('/stats', [HomePageController::class, 'stats']);
-Route::get('/logout', [AuthController::class, 'logout']);
-Route::post('/whatsapp/command', [DepositController::class, 'handleWhatsAppCommand']);
+Route::middleware('auth')->group(function () {
+    Route::get('/data/deposit', [DepositController::class, 'index']);
+    Route::get('/data/history', [DepositController::class, 'history']);
+    Route::post('/deposit/store', [DepositController::class, 'store']);
+    Route::post('/logout', [AuthController::class, 'logout']);
+});
